@@ -5,28 +5,43 @@
 ## 2.4.2
 ## 2.27
 >(a) int i = -1, & r = 0;
-- r is illegal. r need to refer a variable.
+- r is illegal. r need to refer a object.
 >(b) int * const p2 = &i2;
 - ok.
 >(c): const int i = -1, &r = 0;
-- cannt refer to a literal
+- **legal**
 >(d) const int * const p3 = &i2; 
 - a const pointer points to const int, i2 needs to be a const.
+- **legal**
 >(e) const int *p1 = &i2;
 - ok.
 >(f) const int & const r2;
 - r2 needs to be initialized.
+- **corrected: r2 is a reference that cannot be const. reference is not an object.**
 >(g) const int i2 = i, &r = i;
-- r needs a const , first const cant restirct r.
+-legal 
 
 ### 2.28
 > (a) int i, * const cp;
-- a const pointer needs to be initialized
+- illegal. a const pointer needs to be initialized. 
 > (b) int * p1, * const p2;
-- p2 is a const pointer, need to be initialized
+- illegal, p2 is a const pointer, need to be initialized
 > (c) const int ic, &r = ic;
--  r refers to a const value, should be a" const & r;"
+- legal.
+- **ic must initialize**
 > (d) const int * const p3; 
 - p3 is a const pointer which points to a const value, needs to be initialized.
 > (e) const int * p;
 - correct.
+
+
+### 2.29
+```c++
+i = ic; //legal
+p1 = p3; //illegal . p3 is a pointer to const
+p1 = & ic; //illegal. ic is a const object, can only pointed by a pointer to const
+p3 = & ic; //ilegal
+p2 = p1; // p2 is a const pointer, cannt assign
+ic = * p3; //ilegal.ic is a const int.
+
+```
