@@ -48,19 +48,20 @@ ic = * p3; //ilegal.ic is a const int.
 
 ### 2.30
 ```C++
-const int v2 = 0; //low level const
+const int v2 = 0; //top level const
 int v1 = v2; //non const
 int * p1 = &v1, &r1 = v1; //non const
 const int * p2 = v2, * const p3 = &i, &r2 = v2; //p2 is low level, p3 is high level, r2 is illegal
+// **r2 is legal. and r2 is low level const. p3 is high level and low level**
 
 ```
 ### 2.31
 ```c++
-r1 = v2; //illegal
+r1 = v2; //illegal 
 p1 = p2; //illegal
 p2 = p1; //legal
-p1 = p3; //legal
-p2 = p3; //legal
+p1 = p3; //legal **illegal**
+p2 = p3; //legal 
 
 ```
 

@@ -9,6 +9,7 @@ int main()
 	std::cout << "changed by pointer: " << i << std::endl;
 
 
-	const int * p;	
+	const int * p, & r1 = i;	
+	r1 = 30;
 	return 0;
 }
