@@ -45,3 +45,23 @@ p2 = p1; // p2 is a const pointer, cannt assign
 ic = * p3; //ilegal.ic is a const int.
 
 ```
+
+### 2.30
+```C++
+const int v2 = 0; //low level const
+int v1 = v2; //non const
+int * p1 = &v1, &r1 = v1; //non const
+const int * p2 = v2, * const p3 = &i, &r2 = v2; //p2 is low level, p3 is high level, r2 is illegal
+
+```
+### 2.31
+```c++
+r1 = v2; //illegal
+p1 = p2; //illegal
+p2 = p1; //legal
+p1 = p3; //legal
+p2 = p3; //legal
+
+```
+
+
