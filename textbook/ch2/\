@@ -79,66 +79,9 @@ b = 42; //lega
 c = 42; //legal
 d = 42; // illegal cant int to int *
 e = 42; // illegal cant int to const int *
-g = 42; // illegal cant assign value to const reference.
-
-
-
-
-
-```
-### 2.35
-```
-const int i = 42;
-auto j = i; //int
-const auto &k = i; //const reference refers to a literal value 42.
-auto * p = &i; //int pointer to a const value.
-const auto j2 = i, &k2 = i; //j2 is const value of 42. k2 is const reference to 42
-//i is const int
-//j is int
-//k is const int &
-//p is const int *
-//j2: const int
-//k2: const int &
-
-
 ```
 
 
-### 2.36
-```c++
-int a = 3, b = 4;
-decltype(a) c = a;
-decltype((b)) d = a;
-++c;
-++d;
-
-```
-> c is int, c= 4;
-> d is int &, a = 4, d =4;
-
-### 2.37
-```c++
-int a = 3, b = 4;
-decltype(a) c = a; //c is int, c =3
-decltype(a = b) d = a; //d is int &, d = 3
 
 
-```
-
-### 2.38
-> 1. decltype handles top-level const and references differs subtly
-> 2. the form of expression
-
-```c++
-int i = 0, &r = i; 
-//same
-auto a = i; //a is int
-decltype(i) b = i; 
-
-//different
-auto c = r; //c is int. as r is int alias
-declype(r) d = r; //d is int &
-
-
-```
 
