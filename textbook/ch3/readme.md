@@ -39,3 +39,15 @@ vector<string> v6{10}; // 10 elements
 vector<string> v7{10, "hi"}; //10 hi
 
 ```
+
+
+## 3.18
+```c++
+vector<int> ivec;
+ivec[0] = 42;
+// ivec.push_back(42);
+```
+## 3.19
+> std::vector<int> vi(10, 42);
+> std::vector<int> vi{42, 42, 42,42, 42, 42, 42, 42, 42, 42};
+
