@@ -51,3 +51,55 @@ ivec[0] = 42;
 > std::vector<int> vi(10, 42);
 > std::vector<int> vi{42, 42, 42,42, 42, 42, 42, 42, 42, 42};
 
+## 3.27
+```c++
+unsigned buf_size = 1024;
+(a) int ia[buf_size]; //illegal. need const expression
+(b) int ia[4 & 7 -14]; //legal
+(c) int ia[text_size()]; //illegal
+(d) char st[11] = "fundamental"; //illegal
+
+```
+## 3.28
+```C++
+string sa[10]; //array of 10 empty strings
+int ia[10];// array of 10 int of 0
+int main() 
+{
+
+	string sa2[10]; //10 empty strings;
+	int ia2[10]; //undefined value
+}
+```
+## 3.29 compare array and vector
+```
+vector is STL, has many stl style. daynamic size.
+arrays is fixed size.
+```
+
+## 3.30
+```c++
+constexpr size_t array_size = 10;
+int ia [array_size];
+for (size_t ix = 1; ix <= array_size; ++ix)
+	ia[ix] = ix;
+//for (size_t ix = 0; ix < array_size; ++ix)
+
+```
+
+## 3.34
+p1 += p2 - p1;
+// p1 adds the distance between p2 and p1, p1 gets p2.
+
+
+
+
+
+
+
+
+
+
+
+
+
